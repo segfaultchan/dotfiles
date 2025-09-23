@@ -2,14 +2,14 @@ max-history=4
 default-timeout=5000
 
 font=NotoSans Regular 11
-background-color=#05000aaa
-text-color=#ffffffff
+background-color=#fffffff0
+text-color=#000000ff
 
-border-color=#ffffffee
+border-color=#cc88ffee
 border-size=2
 border-radius=15
 
-progress-color=#ffffffee
+progress-color=#ab47bcff
 
 width=300
 height=100
