@@ -6,40 +6,44 @@
     "gtk-layer-shell": true,
     "margin-bottom": -1,
     "passthrough": false,
-    "height": 15,
+    "height": 25,
+    "spacing": 5,
     "modules-left": [
-        "hyprland/workspaces",
-        "wlr/taskbar",
-    ],
-    "modules-center": [
-    ],
-    "modules-right": [
+        "niri/workspaces",
         "cpu",
         "temperature",
         "memory",
-        "disk",
-        "tray",
+        "disk"
+    ],
+    "modules-right": [
+       "tray",
         "pulseaudio",
         "network",
         "battery",
-        "hyprland/language",
+        "backlight",
+        "niri/language",
         "clock"
     ],
-    "hyprland/language": {
-        "format": "{}",
+    "niri/language": {
+        "format": " {}",
         "format-en": "ENG",
         "format-ru": "РУС"
     },
-    "hyprland/workspaces": {
-        "icon-size": 16,
-        "spacing": 16,
-        "on-scroll-up": "hyprctl dispatch workspace r+1",
-        "on-scroll-down": "hyprctl dispatch workspace r-1"
+    "niri/workspaces": {
+        "icon-size": 10,
+        "spacing": 10,
     },
-      "cpu": {
+    "cpu": {
         "interval": 5,
         "format": "  {usage}%",
         "max-length": 10
+    },
+    "backlight": {
+      "format": " {icon} {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""],     
+        "on-scroll-up": "~/.scripts/notify/brightness.sh up",
+        "on-scroll-down": "~/.scripts/notify/brightness.sh down"
+
     },
     "temperature": {
         "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
@@ -104,8 +108,8 @@
     },
     "network": {
         "format-wifi": " {icon}",
-        "format-ethernet": "  ",
-        "format-disconnected": "󰌙",
+        "format-ethernet": " ",
+        "format-disconnected":"󰌙",
         "format-icons": [
             "󰤯 ",
             "󰤟 ",
@@ -120,7 +124,7 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon} {capacity}%",
+        "format": " {icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
@@ -141,7 +145,7 @@
     "pulseaudio": {
         "max-volume": 150,
         "scroll-step": 10,
-        "format": "{icon}",
+        "format": " {icon}",
         "tooltip-format": "{volume}%",
         "format-muted": "",
         "format-icons": {

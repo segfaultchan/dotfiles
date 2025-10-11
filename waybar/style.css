@@ -1,9 +1,9 @@
-@import "./themes/latte.css";
+@import "./themes/my.css";
 * {
   /* reference the color by using @color-name */
   color: @text;
   font-family: "NotoSans Regular", "Awesome Font";
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -27,6 +27,7 @@ window#waybar {
 #temperature.critical {
   padding-right: 3px;
   font-size: initial;
+  color: @red;
 }
 
 #window {
@@ -37,24 +38,26 @@ window#waybar {
 
 .modules-left,
 .modules-right {
-  background-color: rgba(228,228,228,0.85);
+  background-color: @base;
   margin-left: 5px;
   margin-right: 5px;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-bottom: 5px;
-  padding-left: 5px;
   padding-right: 5px;
+  border-color: #cc88ff;
+}
+
+.modules-right {
+    padding-left: 5px;
 }
 
 #workspaces button.active {
   background-color: @surface2;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 #workspaces button {
   background-color: transparent;
-  border-radius: 15px;
-  margin-bottom: 2px;
-  margin-top: 2px;
+  border-radius: 10px;
 }
 
 #tray{
@@ -71,7 +74,6 @@ window#waybar {
 }
 
 #pulseaudio {
-  font-family: "NotoSans Regular";
   padding-left: 3px;
   padding-right: 3px;
 }
